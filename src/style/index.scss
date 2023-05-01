@@ -1,0 +1,60 @@
+@import './header';
+@import './variables';
+@import './home';
+@import './pageList';
+
+@font-face {
+  font-family: 'AvenirNextBold';
+  src: url('../fonts/AvenirNextLTPro-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'AvenirNextIt';
+  src: url('../fonts/AvenirNextLTPro-It.otf') format('opentype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'AvenirNextRegular';
+  src: url('../fonts/AvenirNextLTPro-Regular.otf') format('opentype');
+  font-style: regular;
+}
+
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'AvenirNextregular';
+}
+
+html,
+h3,
+h4 {
+  background: $primary-color;
+  color: $tertiary-color;
+}
+
+#main-title, #main-title:visited {
+  font-family: 'AvenirNextBold';
+  text-decoration: none;
+	position: relative;
+	color: #069;
+  cursor: pointer;
+  color: $secondary-color;
+  font-size: clamp(2em, 4vw, 6em);
+  &:after {
+		content: '';
+		height: 4px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		background: $secondary-color;
+		transition: 0.2s;
+	}
+  &:hover:after {
+		width: 100%;
+	}
+}

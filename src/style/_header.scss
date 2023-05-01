@@ -1,0 +1,32 @@
+@import './variables';
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: clamp(1em, 2vw, 3em)
+}
+
+form {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 20vw;
+  border: 1px solid $tertiary-color;
+  border-radius: 30px;
+  padding: 0.4em 0;
+
+  input {
+    background: $primary-color;
+    border: none;
+    width: 80%;
+    color: $tertiary-color;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  img {
+    padding: 0 1em;
+  }
+}
