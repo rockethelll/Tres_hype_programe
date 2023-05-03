@@ -1,0 +1,157 @@
+.article {
+  @include displayFlex(flex, '', center);
+  margin: 0 auto;
+  flex-direction: column;
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-screenshot {
+  position: relative;
+  width: 99vw;
+
+  img {
+    @include imageDisplay;
+    max-height: 40rem;
+    margin-top: 2em;
+  }
+}
+
+.head {
+  @include displayFlex(flex, space-between, center);
+  width: 100%;
+  margin: 3em 0;
+
+  .title {
+    font-family: 'AvenirNextBold';
+    font-size: 4em;
+    // margin-top: 1em;
+  }
+
+  .note {
+    font-family: 'AvenirNextBold';
+    color: $secondary-color;
+    font-size: 2em;
+  }
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  >div {
+    margin-top: 2em;
+  }
+}
+
+.release {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.developer {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.platforms {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.publisher {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+.genre {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.tags {
+  grid-area: 2 / 3 / 3 / 5;
+}
+
+.card-title {
+  font-family: 'AvenirNextBold';
+}
+
+.description {
+
+  p:nth-child(2),
+  p:nth-child(4) {
+    font-family: 'AvenirNextBold';
+    margin-top: 2em;
+  }
+}
+
+.link {
+  background-color: $secondary-color;
+  font-size: 1.3em;
+  color: $tertiary-color;
+  font-family: 'AvenirNextBold';
+  position: absolute;
+  bottom: 10%;
+  right: 10vw;
+  padding: 0.7em 1em 0.7em 1em;
+  text-align: left;
+  border-radius: 0.1em;
+  cursor: pointer;
+  text-decoration: none;
+
+  span {
+    margin-left: 3em;
+  }
+}
+
+h2 {
+  font-family: 'AvenirNextBold';
+  color: $secondary-color;
+  margin-bottom: 0.4em;
+}
+
+.game-buy-trailer {
+  width: 100%;
+  @include displayFlex(flex, start, center);
+  flex-direction: column;
+  margin: 1em 0;
+
+}
+
+.buy,
+.trailer,
+.screen {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.container_img {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+
+  img {
+    @include imageDisplay
+  }
+}
+
+.screen__img1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.screen__img2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.screen__img3 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.screen__img4 {
+  grid-area: 2 / 2 / 3 / 3;
+}

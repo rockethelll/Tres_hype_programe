@@ -17,5 +17,9 @@ const callRoute = () => {
   }
 }
 
+formSearch.addEventListener('submit', () => {
+  formSearch.action = `#pagelist/${searchValue.value}`
+})
+
 window.addEventListener("hashchange", () => callRoute())
 window.addEventListener("DOMContentLoaded", () => callRoute())

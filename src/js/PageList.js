@@ -1,8 +1,5 @@
-const searchValue = document.getElementById('search')
-
 const PageList = (argument = "") => {
   const preparePage = () => {
-
     const cleanedArgument = argument.trim().replace(/\s+/g, "-")
 
     const displayResults = (articles) => {
@@ -10,12 +7,15 @@ const PageList = (argument = "") => {
         (article) =>
           `
         <article class="card" data-id="${article.id}">
-        <img src="${article.background_image}" alt="${article.name}" class="card__img"/>
-        <h3>${article.name}</h3>
-        <h4>${article.released}</h4>
-        <a href="#pagedetail/${article.id}">${article.id}</a>
+        <div class="card__container">
+          <img src="${article.background_image}" alt="${article.name}" class="card__img"/>
+          <p class="text">Teste affichage P</p>
+        </div>
+        <a href="#pagedetail/${article.slug}">
+          <h3>${article.name}</h3>
+          </a>
         </article>`
-        )
+      )
       const resultsContainer = document.querySelector(".page-list .articles")
       resultsContainer.innerHTML = resultsContent.join("\n")
     }
@@ -30,8 +30,10 @@ const PageList = (argument = "") => {
         })
     }
 
-    fetchList(`https://api.rawg.io/api/games?key=${process.env.API_TOKEN
-  }`, cleanedArgument)
+    fetchList(
+      `https://api.rawg.io/api/games?key=${process.env.API_TOKEN}`,
+      cleanedArgument
+    )
   }
 
   const render = () => {
@@ -46,11 +48,5 @@ const PageList = (argument = "") => {
 
   render()
 }
-
-searchValue.addEventListener('input', (e) => {
-  PageList(e.target.value)
-})
-
-
 
 export default PageList

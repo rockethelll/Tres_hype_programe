@@ -1,0 +1,35 @@
+@mixin hover-effect {
+  font-family: 'AvenirNextBold';
+  text-decoration: none;
+	position: relative;
+	color: #069;
+  cursor: pointer;
+  color: $secondary-color;
+  font-size: clamp(2em, 4vw, 6em);
+  &:after {
+		content: '';
+		height: 4px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		background: $secondary-color;
+		transition: 0.2s;
+	}
+  &:hover:after {
+		width: 100%;
+	}
+}
+
+@mixin displayFlex($display, $justify, $align ) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin imageDisplay {
+	width: 100%;
+	aspect-ratio: 16/9;
+	object-fit: cover;
+	height: 100%;
+}

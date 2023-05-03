@@ -1,16 +1,5 @@
 .articles {
-  display: flex;
-  justify-content: space-around;
+  @include displayFlex(flex, center, '');
   flex-wrap: wrap;
-
-}
-
-.card {
-  width: 500px;
-  margin: 10px;
-  img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    width: 100%;
-  }
+  // margin: 0 2em;
 }
