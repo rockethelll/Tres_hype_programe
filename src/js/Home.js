@@ -29,7 +29,6 @@ const Home = (argument = "") => {
       fetch(finalURL)
         .then((response) => response.json())
         .then((responseData) => {
-          console.log(responseData.results[0])
           displayResults(responseData.results)
         })
     }
