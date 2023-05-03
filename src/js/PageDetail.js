@@ -3,20 +3,46 @@ const PageDetail = (argument) => {
     const cleanedArgument = argument.trim().replace(/\s+/g, "-")
 
     const displayGame = (gameData) => {
-      const { background_image_additional, rating, rating_top, ratings_count, name, released, description, developers, platforms, publishers, genres, tags, website } = gameData
+      const {
+        background_image_additional,
+        rating,
+        rating_top,
+        ratings_count,
+        name,
+        released,
+        description,
+        developers,
+        platforms,
+        publishers,
+        genres,
+        tags,
+        website,
+      } = gameData
       const articleDOM = document.querySelector(".page-detail .article")
 
       articleDOM.querySelector("img").src = background_image_additional
-      articleDOM.querySelector(".link").setAttribute('href', website)
-      articleDOM.querySelector("p.note").innerHTML = `${rating} / ${rating_top} - ${ratings_count} votes`
+      articleDOM.querySelector(".link").setAttribute("href", website)
+      articleDOM.querySelector(
+        "p.note"
+      ).innerHTML = `${rating} / ${rating_top} - ${ratings_count} votes`
       articleDOM.querySelector("h1.title").innerHTML = name
       articleDOM.querySelector("p.description").innerHTML = description
       articleDOM.querySelector("p.release__date span").innerHTML = released
-      articleDOM.querySelector("p.developer__name").innerHTML = developers.map((dev) => dev.name).join(', ')
-      articleDOM.querySelector("p.platforms__name").innerHTML = platforms.map((platform) => platform.platform.name).join(' ,')
-      articleDOM.querySelector("p.publisher__name").innerHTML = publishers.map((publisher) => publisher.name).join(' ,')
-      articleDOM.querySelector("p.genre__name").innerHTML = genres.map((genre) => genre.name).join(' ,')
-      articleDOM.querySelector("p.tags__name").innerHTML = tags.map((tag) => tag.name).join(', ')
+      articleDOM.querySelector("p.developer__name").innerHTML = developers
+        .map((dev) => dev.name)
+        .join(", ")
+      articleDOM.querySelector("p.platforms__name").innerHTML = platforms
+        .map((platform) => platform.platform.name)
+        .join(" ,")
+      articleDOM.querySelector("p.publisher__name").innerHTML = publishers
+        .map((publisher) => publisher.name)
+        .join(" ,")
+      articleDOM.querySelector("p.genre__name").innerHTML = genres
+        .map((genre) => genre.name)
+        .join(" ,")
+      articleDOM.querySelector("p.tags__name").innerHTML = tags
+        .map((tag) => tag.name)
+        .join(", ")
     }
 
     const fetchGame = (url, argument) => {
@@ -36,7 +62,6 @@ const PageDetail = (argument) => {
       articleDOM.querySelector(".screen__img2").src = results[1].image
       articleDOM.querySelector(".screen__img3").src = results[2].image
       articleDOM.querySelector(".screen__img4").src = results[3].image
-
     }
 
     const fetchGameScreenshots = (url, argument) => {

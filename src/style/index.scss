@@ -98,6 +98,7 @@ html {
   color: white;
   @include displayFlex(flex, start, start);
   flex-direction: column;
+
   p {
     margin: 0.5em;
   }
