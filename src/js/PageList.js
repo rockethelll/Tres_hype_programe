@@ -9,8 +9,10 @@ const PageList = (argument = "") => {
         <article class="card" data-id="${article.id}">
         <div class="card__container">
           <img src="${article.background_image}" alt="${article.name}" class="card__img"/>
-          <p class="text">Teste affichage P</p>
-        </div>
+          <div class="text__container">
+            <p class="text">${article.released}</p>
+            <p class="text">${article.rating}/${article.rating_top} - ${article.ratings_count} votes</p>
+          </div>
         <a href="#pagedetail/${article.slug}">
           <h3>${article.name}</h3>
           </a>
